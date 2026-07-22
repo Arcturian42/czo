@@ -14,6 +14,10 @@ export const siteConfig = {
   brandName: "Kinto",
   legalName: "[RAISON SOCIALE]",
   tagline: "Le bon diagnostic. La bonne pièce. La bonne décision.",
+  // Ligne compagnon émotionnelle : la tagline dit le « comment » (rationnel),
+  // celle-ci dit le « pourquoi » (l'objet qu'on accompagne).
+  companionLine:
+    "Parce qu'un objet, ça s'accompagne — ça ne se remplace pas d'un geste.",
   shortPitch:
     "Réparation et formation en électronique fondées sur le diagnostic, la transparence des pièces et la prolongation utile des équipements.",
 

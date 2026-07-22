@@ -34,10 +34,12 @@ export function Hero() {
           <Reveal delay={120}>
             <p className="mt-6 text-lg leading-relaxed text-muted">
               Nous réparons smartphones, ordinateurs, consoles et appareils
-              électroniques selon une méthode fondée sur le diagnostic, la
-              transparence des pièces et la prolongation utile des équipements.
-              Cette même méthode est transmise aux particuliers et aux
-              professionnels.
+              électroniques selon une méthode fondée sur le diagnostic et la
+              transparence des pièces. Parce qu&apos;un appareil n&apos;est pas un
+              consommable&nbsp;: c&apos;est un objet qu&apos;on comprend, qu&apos;on
+              fait durer, et qu&apos;on ne remplace qu&apos;en dernier recours.
+              Cette méthode, nous la transmettons aussi — aux particuliers comme
+              aux professionnels.
             </p>
           </Reveal>
 

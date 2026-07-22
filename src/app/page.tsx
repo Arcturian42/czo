@@ -5,6 +5,7 @@ import { LocalBusinessJsonLd, WebSiteJsonLd } from "@/components/seo/json-ld";
 import { Hero } from "@/components/marketing/hero";
 import { TrustBar } from "@/components/marketing/trust-bar";
 import { ProblemSection } from "@/components/marketing/problem-section";
+import { BrandOrigin } from "@/components/marketing/brand-origin";
 import { MethodSteps } from "@/components/marketing/method-steps";
 import { TwoPaths } from "@/components/marketing/two-paths";
 import { ServiceExplorer } from "@/components/services/service-explorer";
@@ -18,7 +19,7 @@ import { FaqSection } from "@/components/marketing/faq-section";
 import { FinalCTA } from "@/components/marketing/final-cta";
 
 export const metadata: Metadata = buildMetadata({
-  description: `Réparation et formation en électronique à ${siteConfig.city}. Smartphones, Mac, PC, consoles : un diagnostic clair, des pièces identifiées, aucune intervention sans votre accord. ${siteConfig.tagline}`,
+  description: `Réparation et formation en électronique à ${siteConfig.city}. Smartphones, Mac, PC, consoles : un diagnostic clair, des pièces identifiées, aucune intervention sans votre accord. Réparer plutôt que remplacer — prolongez la vie de vos appareils. ${siteConfig.tagline}`,
   path: "/",
   keywords: [
     `réparation informatique ${siteConfig.city}`,
@@ -27,6 +28,8 @@ export const metadata: Metadata = buildMetadata({
     `microsoudure ${siteConfig.city}`,
     "formation réparation smartphone",
     "formation microsoudure",
+    "réparer plutôt que remplacer",
+    "économie circulaire électronique",
   ],
 });
 
@@ -39,6 +42,7 @@ export default function HomePage() {
       <Hero />
       <TrustBar />
       <ProblemSection />
+      <BrandOrigin />
       <MethodSteps />
       <TwoPaths />
       <ServiceExplorer />

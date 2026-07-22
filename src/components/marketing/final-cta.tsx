@@ -17,10 +17,14 @@ export function FinalCTA() {
             Décrivez votre appareil ou votre objectif de formation. Nous vous
             orienterons vers la solution la plus adaptée.
           </p>
+          <p className="mx-auto mt-3 max-w-xl text-base leading-relaxed text-accent-600">
+            Chaque appareil qu&apos;on garde en vie, c&apos;est de la valeur
+            conservée — et un déchet en moins.
+          </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <ButtonLink href="/diagnostic" size="lg">
               <Stethoscope className="size-4" aria-hidden="true" />
-              Faire diagnostiquer un appareil
+              Faire diagnostiquer mon appareil
             </ButtonLink>
             <ButtonLink href="/se-former" variant="outline" size="lg">
               <GraduationCap className="size-4" aria-hidden="true" />

@@ -16,7 +16,7 @@ export const mainNav: NavItem[] = [
 ];
 
 /** CTA permanents. */
-export const primaryCta: NavItem = { label: "Décrire mon besoin", href: "/diagnostic" };
+export const primaryCta: NavItem = { label: "Faire diagnostiquer", href: "/diagnostic" };
 export const secondaryCta: NavItem = { label: "Apprendre à réparer", href: "/se-former" };
 
 /** Liens du pied de page, regroupés par colonne. */

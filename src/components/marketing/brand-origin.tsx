@@ -1,5 +1,6 @@
 import { Section, Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { siteConfig } from "@/config/site";
 
 // Pile de polices avec repli CJK pour le kanji (Geist ne couvre pas le japonais).
 const CJK_STACK =
@@ -35,6 +36,15 @@ export function BrandOrigin() {
                 expliqué, pièces identifiées, geste maîtrisé. La transparence n&apos;est
                 pas un supplément — c&apos;est la valeur.
               </p>
+              <p>
+                Dans la pensée japonaise, un objet n&apos;est pas inerte : il a une
+                histoire, presque une vie. Le réparer, c&apos;est l&apos;accompagner —
+                savoir ce qu&apos;il contient, ce qu&apos;on peut y faire évoluer, ce
+                qu&apos;on y gagne et ce qu&apos;on y perd, pour décider en connaissance
+                de cause. Remettre l&apos;objet au centre plutôt que le remplacer
+                d&apos;un geste, c&apos;est prolonger sa vie utile — la manière la plus
+                concrète de faire de l&apos;économie circulaire.
+              </p>
               <p className="text-white/90">
                 <span className="font-medium text-white">Réparer</span>, c&apos;est
                 prolonger. <span className="font-medium text-white">Transmettre</span>,
@@ -43,6 +53,27 @@ export function BrandOrigin() {
                 notre fil d&apos;or.
               </p>
             </div>
+
+            {/* Décider en connaissance de cause : les trois temps de l'accompagnement. */}
+            <ul className="mt-7 space-y-2.5 text-white/85">
+              {[
+                "Savoir ce qu'il y a dedans",
+                "Peser les options : avantages, limites, coût",
+                "Décider avec vous, pas à votre place",
+              ].map((item) => (
+                <li key={item} className="flex items-center gap-3">
+                  <span
+                    aria-hidden="true"
+                    className="size-1.5 shrink-0 rotate-45 rounded-[1px] bg-[image:var(--seam-gold)]"
+                  />
+                  {item}
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-7 font-serif text-lg italic text-accent-300">
+              {siteConfig.companionLine}
+            </p>
           </Reveal>
 
           <Reveal delay={80}>
