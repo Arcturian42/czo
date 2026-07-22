@@ -18,7 +18,7 @@ import { submitDiagnostic } from "@/app/actions/diagnostic";
 import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
-import { TextField, TextareaField, CheckboxField, Honeypot } from "./fields";
+import { TextField, TextareaField, CheckboxField, RadioCardGroup, Honeypot } from "./fields";
 import { FileUploader } from "./file-uploader";
 import { FormAlert, SuccessPanel } from "./form-ui";
 
@@ -243,25 +243,14 @@ export function DiagnosticForm({ initialDevice }: { initialDevice?: DeviceType }
 
       {/* Étape 3 — Cause */}
       {step === 2 && (
-        <fieldset>
-          <legend className="mb-4 text-lg font-semibold text-ink">Que s'est-il passé ?</legend>
-          <div className="grid gap-2.5 sm:grid-cols-2">
-            {CAUSES.map((value) => (
-              <label
-                key={value}
-                className="flex cursor-pointer items-center gap-3 rounded-xl border border-line p-4 text-sm font-medium transition-colors hover:border-primary-300 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-800"
-              >
-                <input type="radio" value={value} className="size-4 text-primary-600" {...register("cause")} />
-                {CAUSE_LABELS[value]}
-              </label>
-            ))}
-          </div>
-          {errors.cause ? (
-            <p role="alert" className="mt-2 text-sm text-red-600">
-              {errors.cause.message}
-            </p>
-          ) : null}
-        </fieldset>
+        <RadioCardGroup
+          legend="Que s'est-il passé ?"
+          legendClassName="mb-4 text-lg font-semibold text-ink"
+          columns={2}
+          options={CAUSES.map((value) => ({ value, label: CAUSE_LABELS[value] }))}
+          error={errors.cause?.message}
+          inputProps={(value) => ({ ...register("cause"), value })}
+        />
       )}
 
       {/* Étape 4 — Détails */}
@@ -293,25 +282,13 @@ export function DiagnosticForm({ initialDevice }: { initialDevice?: DeviceType }
 
       {/* Étape 6 — Suite */}
       {step === 5 && (
-        <fieldset>
-          <legend className="mb-4 text-lg font-semibold text-ink">Que souhaitez-vous ensuite ?</legend>
-          <div className="grid gap-2.5">
-            {NEXT_STEPS.map((value) => (
-              <label
-                key={value}
-                className="flex cursor-pointer items-center gap-3 rounded-xl border border-line p-4 text-sm font-medium transition-colors hover:border-primary-300 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-800"
-              >
-                <input type="radio" value={value} className="size-4 text-primary-600" {...register("nextStep")} />
-                {NEXT_STEP_LABELS[value]}
-              </label>
-            ))}
-          </div>
-          {errors.nextStep ? (
-            <p role="alert" className="mt-2 text-sm text-red-600">
-              {errors.nextStep.message}
-            </p>
-          ) : null}
-        </fieldset>
+        <RadioCardGroup
+          legend="Que souhaitez-vous ensuite ?"
+          legendClassName="mb-4 text-lg font-semibold text-ink"
+          options={NEXT_STEPS.map((value) => ({ value, label: NEXT_STEP_LABELS[value] }))}
+          error={errors.nextStep?.message}
+          inputProps={(value) => ({ ...register("nextStep"), value })}
+        />
       )}
 
       {/* Étape 7 — Coordonnées */}

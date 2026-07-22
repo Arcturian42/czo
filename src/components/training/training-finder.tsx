@@ -1,13 +1,13 @@
 "use client";
 
-import { useMemo, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import type { TrainingAudience } from "@/types";
 import { trainingAudiences } from "@/content/trainings";
 import { TRAINING_PROFILES } from "@/schemas/forms";
 import { track } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants, ButtonLink } from "@/components/ui/button";
+import { RadioCardGroup } from "@/components/forms/fields";
 import { TrainingRequestForm } from "@/components/forms/training-request-form";
 
 type Profile = (typeof TRAINING_PROFILES)[number];
@@ -42,10 +42,10 @@ function recommend(situation?: string, objectif?: string): Profile | undefined {
 export function TrainingFinder() {
   const [situation, setSituation] = useState<string>();
   const [objectif, setObjectif] = useState<string>();
-  const [chosen, setChosen] = useState<Profile | undefined>(undefined);
+  const [chosen, setChosen] = useState<Profile>();
   const formRef = useRef<HTMLDivElement>(null);
 
-  const recommended = useMemo(() => recommend(situation, objectif), [situation, objectif]);
+  const recommended = recommend(situation, objectif);
   const reco: TrainingAudience | undefined = recommended
     ? trainingAudiences.find((a) => a.key === recommended)
     : undefined;
@@ -54,27 +54,31 @@ export function TrainingFinder() {
     if (!recommended) return;
     setChosen(recommended);
     track("training_finder_complete");
-    requestAnimationFrame(() =>
-      formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }),
-    );
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
     <div>
       <div className="grid gap-6 md:grid-cols-2">
-        <QuestionGroup
+        <RadioCardGroup
           legend="Aujourd'hui, vous êtes…"
-          name="situation"
           options={SITUATIONS}
-          value={situation}
-          onChange={setSituation}
+          inputProps={(value) => ({
+            name: "situation",
+            value,
+            checked: situation === value,
+            onChange: () => setSituation(value),
+          })}
         />
-        <QuestionGroup
+        <RadioCardGroup
           legend="Votre objectif principal…"
-          name="objectif"
           options={OBJECTIFS}
-          value={objectif}
-          onChange={setObjectif}
+          inputProps={(value) => ({
+            name: "objectif",
+            value,
+            checked: objectif === value,
+            onChange: () => setObjectif(value),
+          })}
         />
       </div>
 
@@ -95,12 +99,9 @@ export function TrainingFinder() {
                 Préremplir ma demande
                 <ArrowRight className="size-4" aria-hidden="true" />
               </button>
-              <a
-                href={`/se-former#${reco.key}`}
-                className={buttonVariants({ variant: "outline", size: "md" })}
-              >
+              <ButtonLink href={`/se-former#${reco.key}`} variant="outline" size="md">
                 Voir ce parcours
-              </a>
+              </ButtonLink>
             </div>
           </div>
         ) : (
@@ -112,7 +113,6 @@ export function TrainingFinder() {
 
       <div
         ref={formRef}
-        id="demande-form"
         className="mt-10 scroll-mt-28 rounded-2xl border border-line bg-paper p-6 shadow-card md:p-8"
       >
         <h3 className="text-lg font-semibold text-ink">Votre demande de formation</h3>
@@ -127,48 +127,5 @@ export function TrainingFinder() {
         </div>
       </div>
     </div>
-  );
-}
-
-function QuestionGroup({
-  legend,
-  name,
-  options,
-  value,
-  onChange,
-}: {
-  legend: string;
-  name: string;
-  options: readonly { value: string; label: string }[];
-  value: string | undefined;
-  onChange: (value: string) => void;
-}) {
-  return (
-    <fieldset>
-      <legend className="mb-3 text-sm font-medium text-ink">{legend}</legend>
-      <div className="grid gap-2.5">
-        {options.map((o) => (
-          <label
-            key={o.value}
-            className={cn(
-              "flex cursor-pointer items-center gap-3 rounded-xl border p-3.5 text-sm transition-colors",
-              value === o.value
-                ? "border-primary-500 bg-primary-50 text-primary-800"
-                : "border-line text-ink hover:border-primary-300",
-            )}
-          >
-            <input
-              type="radio"
-              name={name}
-              value={o.value}
-              checked={value === o.value}
-              onChange={() => onChange(o.value)}
-              className="size-4 text-primary-600"
-            />
-            {o.label}
-          </label>
-        ))}
-      </div>
-    </fieldset>
   );
 }

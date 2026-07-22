@@ -169,6 +169,60 @@ export const CheckboxField = forwardRef<HTMLInputElement, CheckboxFieldProps>(
 );
 CheckboxField.displayName = "CheckboxField";
 
+type RadioOption = { value: string; label: string };
+
+/**
+ * Groupe de « radio-cards » accessible (fieldset + legend), partagé par le
+ * formulaire de diagnostic et le guide d'orientation formation.
+ *
+ * `inputProps(value)` fournit les props de chaque `<input>` : soit le retour de
+ * `register("champ")` (React Hook Form, non contrôlé), soit `{ checked, onChange }`
+ * (contrôlé). Le style de sélection repose sur `:checked`, valable dans les deux cas.
+ */
+export function RadioCardGroup({
+  legend,
+  options,
+  inputProps,
+  columns = 1,
+  error,
+  legendClassName = "mb-3 text-sm font-medium text-ink",
+}: {
+  legend: string;
+  options: readonly RadioOption[];
+  inputProps: (value: string) => React.ComponentProps<"input">;
+  columns?: 1 | 2;
+  error?: string;
+  legendClassName?: string;
+}) {
+  const id = useId();
+  return (
+    <fieldset>
+      <legend className={legendClassName}>{legend}</legend>
+      <div className={cn("grid gap-2.5", columns === 2 && "sm:grid-cols-2")}>
+        {options.map((o) => (
+          <label
+            key={o.value}
+            className="flex cursor-pointer items-center gap-3 rounded-xl border border-line p-4 text-sm font-medium text-ink transition-colors hover:border-primary-300 has-[:checked]:border-primary-500 has-[:checked]:bg-primary-50 has-[:checked]:text-primary-800"
+          >
+            <input
+              type="radio"
+              className="size-4 text-primary-600"
+              aria-describedby={error ? `${id}-error` : undefined}
+              {...inputProps(o.value)}
+            />
+            {o.label}
+          </label>
+        ))}
+      </div>
+      {error ? (
+        <p id={`${id}-error`} role="alert" className="mt-2 text-sm text-red-600">
+          {error}
+        </p>
+      ) : null}
+    </fieldset>
+  );
+}
+
 /** Champ honeypot anti-spam : invisible pour l'humain, piégeant pour les bots. */
 export function Honeypot({ register }: { register?: Record<string, unknown> }) {
   return (
