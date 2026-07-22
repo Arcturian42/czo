@@ -23,13 +23,14 @@ export function ProfessionalNetworkCTA() {
                 En préparation
               </Badge>
               <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                Vers un réseau de{" "}
+                Le Cercle Kinto — un réseau de{" "}
                 <span className="metal-text">réparateurs</span> plus transparents
               </h2>
               {/* Le fil d'or : la méthode commune qui relie chaque réparateur. */}
               <GoldSeam glow bold length="short" className="mt-6" />
               <p className="mt-6 text-lg leading-relaxed text-white/70">
-                Nous préparons un réseau de professionnels formés et accompagnés
+                Nous préparons <span className="font-medium text-white">Le Cercle
+                Kinto</span>, un réseau de professionnels formés et accompagnés
                 autour d'une méthode commune de diagnostic, de transparence et de
                 contrôle qualité. Il n'existe pas encore — vous pouvez le construire
                 avec nous.

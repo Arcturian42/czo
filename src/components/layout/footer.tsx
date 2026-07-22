@@ -63,6 +63,7 @@ export function Footer() {
                 </span>
               </li>
             </ul>
+            <p className="mt-5 text-sm text-white/60">{siteConfig.coverageNote}</p>
           </div>
 
           <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">

@@ -1,4 +1,4 @@
-import { ShieldCheck, ArrowRight } from "lucide-react";
+import { ShieldCheck, ArrowRight, MapPin } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
@@ -70,6 +70,13 @@ export function Hero() {
                 </li>
               ))}
             </ul>
+          </Reveal>
+
+          <Reveal delay={300}>
+            <p className="mt-5 flex items-center gap-2 text-sm text-muted">
+              <MapPin className="size-4 text-accent-500" aria-hidden="true" />
+              {siteConfig.coverageNote}
+            </p>
           </Reveal>
         </div>
 
