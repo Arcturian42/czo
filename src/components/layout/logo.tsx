@@ -3,8 +3,11 @@ import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
 /**
- * Logo / wordmark. Glyphe minimal évoquant un nœud de circuit + nom de marque.
- * Le nom vient de siteConfig (placeholder tant que non renseigné).
+ * Wordmark Kinto — serif éditorial suivi d'un losange d'or.
+ *
+ * Le losange est le « point » de Kinto : le fil d'or du kintsugi (金継ぎ)
+ * condensé en un signe — la jointure précieuse, réduite à sa plus simple
+ * expression. Le nom vient de `siteConfig` (placeholder tant que non renseigné).
  */
 export function Logo({
   className,
@@ -18,36 +21,26 @@ export function Logo({
       href="/"
       aria-label={`${siteConfig.brandName} — accueil`}
       className={cn(
-        "group inline-flex items-center gap-2.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2",
-        onDark ? "focus-visible:ring-offset-ink" : "focus-visible:ring-offset-paper",
+        "group inline-flex items-baseline gap-1.5 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2",
+        onDark
+          ? "focus-visible:ring-offset-ink"
+          : "focus-visible:ring-offset-paper",
         className,
       )}
     >
       <span
         className={cn(
-          "grid size-9 place-items-center rounded-lg",
-          onDark ? "bg-white/10" : "bg-primary-600",
-        )}
-        aria-hidden="true"
-      >
-        <svg viewBox="0 0 24 24" fill="none" className="size-5">
-          <path
-            d="M5 12h5m4 0h5M12 5v5m0 4v5"
-            stroke="#fff"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-          <circle cx="12" cy="12" r="2.6" fill="#fff" />
-        </svg>
-      </span>
-      <span
-        className={cn(
-          "text-lg font-semibold tracking-tight",
+          "font-serif text-[1.6rem] font-medium leading-none tracking-[-0.01em]",
           onDark ? "text-white" : "text-ink",
         )}
       >
         {siteConfig.brandName}
       </span>
+      {/* Le losange d'or : le point final de la marque, la jointure d'or. */}
+      <span
+        aria-hidden="true"
+        className="size-2 rotate-45 rounded-[1.5px] bg-[image:var(--seam-gold)] shadow-[0_0_9px_-1px_rgba(219,138,82,0.75)] transition-transform duration-500 ease-out group-hover:rotate-[225deg]"
+      />
     </Link>
   );
 }

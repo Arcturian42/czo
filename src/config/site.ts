@@ -12,21 +12,32 @@
 
 export const siteConfig = {
   brandName: "Kinto",
-  legalName: "[RAISON SOCIALE]",
+  legalName: "Kinto SARL",
   tagline: "Le bon diagnostic. La bonne pièce. La bonne décision.",
+  // Ligne compagnon émotionnelle : la tagline dit le « comment » (rationnel),
+  // celle-ci dit le « pourquoi » (l'objet qu'on accompagne).
+  companionLine:
+    "Parce qu'un objet, ça s'accompagne — ça ne se remplace pas d'un geste.",
   shortPitch:
     "Réparation et formation en électronique fondées sur le diagnostic, la transparence des pièces et la prolongation utile des équipements.",
 
-  city: "[VILLE]",
-  region: "[RÉGION]",
+  city: "Paris",
+  region: "Île-de-France",
   phone: "[TÉLÉPHONE]",
-  email: "[EMAIL]",
-  address: "[ADRESSE]",
-  postalCode: "[CODE POSTAL]",
+  email: "contact@kinto.fr",
+  address: "30 rue Marbeuf",
+  postalCode: "75008",
   country: "France",
 
+  // Zone de service — surfacée dans le hero et le pied de page.
+  coverageNote:
+    "Paris & Île-de-France — enlèvement, livraison ou intervention sur place.",
+
   // Délais / mesures — placeholders tant que non confirmés.
-  responseTime: "[DÉLAI DE RÉPONSE]",
+  responseTime: "45 minutes",
+  // ⚠️ « 12 h » annoncé oralement : à confirmer (une garantie se compte
+  // habituellement en mois). Laissé en attente pour ne pas publier un chiffre
+  // qui desservirait la marque.
   warrantyDuration: "[DURÉE DE GARANTIE]",
 
   // Chiffres de réassurance — NE PAS inventer. Laisser `null` masque l'élément.
@@ -44,11 +55,7 @@ export const siteConfig = {
   },
 
   // Horaires d'ouverture — placeholders structurés (jour → plage).
-  openingHours: [
-    { days: "Lundi – Vendredi", hours: "[HORAIRES]" },
-    { days: "Samedi", hours: "[HORAIRES]" },
-    { days: "Dimanche", hours: "Fermé" },
-  ],
+  openingHours: [{ days: "Lundi – Dimanche", hours: "24h/24" }],
 
   // Visuels illustratifs.
   //

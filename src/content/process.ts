@@ -58,9 +58,9 @@ export const problemPoints: { title: string; description: string }[] = [
       "On récupère un appareil réparé sans savoir ce qui a été fait, ni pourquoi.",
   },
   {
-    title: "Des dépenses évitables",
+    title: "Le réflexe du remplacement",
     description:
-      "Remplacer au lieu de réparer, ou réparer un appareil qui ne le méritait pas : le coût grimpe sans raison.",
+      "On rachète alors qu'on pouvait garder : une dépense en trop, un déchet en plus, de la valeur jetée sans raison.",
   },
   {
     title: "L'absence de suivi",

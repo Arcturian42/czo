@@ -7,15 +7,16 @@
  * ------------------------------------------------------------------ */
 
 @theme {
-  /* Neutrals — warm-neutral to avoid a cold, clinical feel */
-  --color-paper: #ffffff;
-  --color-surface: #f7f8fb;
-  --color-surface-strong: #eef1f6;
-  --color-ink: #0f1626;
-  --color-muted: #515c6b;
-  --color-faint: #8a94a3;
-  --color-line: #e6e9ef;
-  --color-line-strong: #d3d9e2;
+  /* Neutrals — warm paper & charcoal ink: an editorial, gallery-like calm
+     that lets the copper seam and the serif wordmark feel precious. */
+  --color-paper: #fdfdfb;
+  --color-surface: #f6f5f1;
+  --color-surface-strong: #edeae2;
+  --color-ink: #17151b;
+  --color-muted: #57535c;
+  --color-faint: #8f8a93;
+  --color-line: #e8e5df;
+  --color-line-strong: #d7d3ca;
 
   /* Primary — precision blue (trust, diagnostic, technical) */
   --color-primary-50: #eff4ff;
@@ -51,9 +52,13 @@
   --color-background: var(--color-paper);
   --color-foreground: var(--color-ink);
 
-  /* Typography */
+  /* Typography — a high-contrast editorial serif carries the voice
+     (headings, wordmark); Geist sans keeps the body clean and legible;
+     Geist mono marks the technical labels. */
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
     "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: "Iowan Old Style", "Palatino Linotype", "Palatino",
+    "Book Antiqua", "Georgia", "Times New Roman", serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", Menlo,
     monospace;
 
@@ -146,8 +151,10 @@
   h3,
   h4 {
     color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-weight: 500;
     text-wrap: balance;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.012em;
   }
 
   p {
@@ -206,7 +213,7 @@
     font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--color-primary-700);
+    color: var(--color-accent-600);
   }
 
   /* Brushed-metal type — the "device" rendered in steel. Reserve for one or

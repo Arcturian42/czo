@@ -15,14 +15,14 @@ export const metadata: Metadata = buildMetadata({
 const rows: [string, string][] = [
   ["Raison sociale", siteConfig.legalName],
   ["Nom commercial", siteConfig.brandName],
-  ["Forme juridique", "[FORME JURIDIQUE]"],
+  ["Forme juridique", "SARL"],
   ["Adresse", `${siteConfig.address}, ${siteConfig.postalCode} ${siteConfig.city}`],
   ["Téléphone", siteConfig.phone],
   ["Email", siteConfig.email],
-  ["SIRET", "[SIRET]"],
-  ["N° TVA intracommunautaire", "[N° TVA]"],
+  ["SIRET", "En cours d'immatriculation"],
+  ["N° TVA intracommunautaire", "En cours d'immatriculation"],
   ["Directeur de la publication", "[DIRECTEUR DE PUBLICATION]"],
-  ["Hébergeur", "[HÉBERGEUR — nom, adresse, téléphone]"],
+  ["Hébergeur", "Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis"],
 ];
 
 export default function MentionsLegalesPage() {

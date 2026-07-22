@@ -79,7 +79,7 @@ export function SectionHeader({
       )}
     >
       {eyebrow ? (
-        <p className={cn("eyebrow mb-3", onDark && "text-primary-300")}>{eyebrow}</p>
+        <p className={cn("eyebrow mb-3", onDark && "text-accent-300")}>{eyebrow}</p>
       ) : null}
       <Heading
         className={cn(

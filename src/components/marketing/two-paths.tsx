@@ -9,7 +9,7 @@ const paths = [
     eyebrow: "Parcours 1",
     title: "Faire réparer",
     text: "Confiez votre appareil à un réparateur qui explique la panne, les options et les risques avant toute intervention.",
-    cta: { label: "Décrire mon appareil", href: "/diagnostic" },
+    cta: { label: "Faire diagnostiquer mon appareil", href: "/diagnostic" },
     tone: "primary" as const,
   },
   {
