@@ -7,11 +7,12 @@ import { Section, Container, SectionHeader } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Card } from "@/components/ui/card";
 import { FounderSection } from "@/components/marketing/founder-section";
+import { BrandOrigin } from "@/components/marketing/brand-origin";
 import { ButtonLink } from "@/components/ui/button";
 
 export const metadata: Metadata = buildMetadata({
   title: "À propos",
-  description: `L'histoire de ${siteConfig.brandName} : une expertise née de l'atelier, une méthode de réparation transparente et une volonté de transmettre. Réparation et formation en électronique à ${siteConfig.city}.`,
+  description: `L'histoire de ${siteConfig.brandName}, dont le nom s'inspire du kintsugi — l'art japonais de réparer à l'or. Une expertise née de l'atelier, une méthode de réparation transparente et une volonté de transmettre. Réparation et formation en électronique à ${siteConfig.city}.`,
   path: "/a-propos",
 });
 
@@ -33,6 +34,9 @@ export default function AProposPage() {
       />
 
       <FounderSection variant="full" />
+
+      {/* Origine du nom — kintsugi */}
+      <BrandOrigin />
 
       {/* Valeurs */}
       <Section surface="surface">
