@@ -4,6 +4,7 @@ import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ButtonLink } from "@/components/ui/button";
 import { Figure } from "@/components/ui/figure";
+import { GoldSeam } from "@/components/ui/gold-seam";
 import { CircuitMotif } from "./circuit-motif";
 
 const reassurance = [
@@ -68,16 +69,22 @@ export function Hero() {
 
         <Reveal delay={140} className="relative">
           <div className="relative">
-            <Figure
-              src={siteConfig.media.hero}
-              alt="Smartphone ouvert et outils de précision sur un plan de travail d'atelier soigné (illustration)."
-              ratio="aspect-[4/5]"
-              priority
-              sizes="(min-width: 1024px) 42vw, 100vw"
-              className="shadow-elevated"
-            />
-            <div className="absolute -bottom-5 -left-5 hidden max-w-[15rem] rounded-2xl border border-line bg-paper p-4 shadow-card sm:block">
-              <p className="text-sm font-medium text-ink">{siteConfig.tagline}</p>
+            {/* Cadre en métal satiné : l'appareil, rendu comme un substrat d'acier
+                brossé — le contrepoint froid qui fait ressortir la jointure cuivre. */}
+            <div className="rounded-[calc(1.5rem+2px)] bg-[image:var(--metal-satin)] p-0.5 shadow-elevated">
+              <Figure
+                src={siteConfig.media.hero}
+                alt="Smartphone ouvert et outils de précision sur un plan de travail d'atelier soigné (illustration)."
+                ratio="aspect-[4/5]"
+                priority
+                sizes="(min-width: 1024px) 42vw, 100vw"
+                className="border-transparent"
+              />
+            </div>
+            {/* Carte signature : le « fil d'or » kintsugi coiffe l'accroche. */}
+            <div className="absolute -bottom-5 -left-5 hidden max-w-[15rem] overflow-hidden rounded-2xl border border-line bg-paper shadow-card sm:block">
+              <GoldSeam />
+              <p className="p-4 text-sm font-medium text-ink">{siteConfig.tagline}</p>
             </div>
           </div>
         </Reveal>

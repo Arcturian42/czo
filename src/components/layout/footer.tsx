@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { footerNav } from "@/config/nav";
 import { siteConfig, telHref, isPlaceholder } from "@/config/site";
 import { Logo } from "./logo";
+import { GoldSeam } from "@/components/ui/gold-seam";
 import { CircuitMotif } from "@/components/marketing/circuit-motif";
 
 /** Pied de page : marque, contact, navigation, mentions légales. */
@@ -12,6 +13,8 @@ export function Footer() {
 
   return (
     <footer className="relative mt-auto overflow-hidden bg-ink text-white/70">
+      {/* Signature de marque : chaque page se referme sur la jointure d'or. */}
+      <GoldSeam glow className="absolute inset-x-0 top-0" />
       <CircuitMotif className="absolute -right-16 -top-10 hidden h-80 w-80 text-white/[0.05] md:block" />
       <div className="container-edge relative py-14 pb-28 md:py-16 lg:pb-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_2fr]">

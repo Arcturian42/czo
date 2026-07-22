@@ -35,7 +35,7 @@ export function MethodSteps({
                     <span className="grid size-11 place-items-center rounded-xl bg-primary-50 text-primary-700">
                       <Icon className="size-5" aria-hidden="true" />
                     </span>
-                    <span className="font-mono text-sm text-faint">
+                    <span className="font-mono text-sm font-medium text-accent-500">
                       0{step.number}
                     </span>
                   </div>

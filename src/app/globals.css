@@ -30,10 +30,22 @@
   --color-primary-900: #20326f;
   --color-primary-950: #172150;
 
-  /* Accent — copper (craft, soldering, human warmth). Used sparingly. */
+  /* Accent — copper, the "fil d'or" of kintsugi: the repair made visible.
+     Used sparingly, always as the seam that joins, never as filler. */
+  --color-accent-300: #e7aa7c;
   --color-accent-400: #db8a52;
   --color-accent-500: #c26a34;
   --color-accent-600: #a85a2b;
+  --color-accent-700: #82431f;
+
+  /* Metal — the device: precision electronics as a brushed-steel substrate.
+     Cool, industrial, calm. The counterpoint that lets the copper seam glow. */
+  --color-silver: #e8ebef;
+  --color-aluminium: #c9ced5;
+  --color-steel: #929aa5;
+  --color-titanium: #68717d;
+  --color-graphite: #2b313a;
+  --color-carbon: #171c23;
 
   /* Semantic aliases */
   --color-background: var(--color-paper);
@@ -93,6 +105,28 @@
     color-scheme: light;
     scroll-behavior: smooth;
     -webkit-tap-highlight-color: transparent;
+
+    /* Brushed-metal satin — a raking highlight across steel/aluminium.
+       Reserved for signature surfaces (never a flat fill). */
+    --metal-satin: linear-gradient(
+      115deg,
+      #5a626d 0%,
+      #aeb6bf 22%,
+      #7f8792 39%,
+      #edf0f3 52%,
+      #838b96 65%,
+      #545c67 82%,
+      #9aa2ad 100%
+    );
+    /* Fil d'or — the kintsugi seam: a warm copper vein with a molten centre. */
+    --seam-gold: linear-gradient(
+      90deg,
+      var(--color-accent-600) 0%,
+      var(--color-accent-400) 34%,
+      #f2ba8b 50%,
+      var(--color-accent-500) 66%,
+      var(--color-accent-600) 100%
+    );
   }
 
   html {
@@ -173,6 +207,35 @@
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--color-primary-700);
+  }
+
+  /* Brushed-metal type — the "device" rendered in steel. Reserve for one or
+     two words on dark surfaces, where the satin highlight reads with contrast. */
+  .metal-text {
+    background-image: var(--metal-satin);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Fil d'or — the signature kintsugi seam. A hairline of copper that fades
+     into the surface at both ends, turning a plain divider into the brand's
+     "visible, precious repair". Decorative: always aria-hidden. */
+  .gold-seam {
+    height: 1px;
+    border: 0;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      var(--color-accent-500) 20%,
+      var(--color-accent-400) 50%,
+      var(--color-accent-500) 80%,
+      transparent 100%
+    );
+  }
+  /* On dark surfaces the seam gains a faint molten glow. */
+  .gold-seam-glow {
+    box-shadow: 0 0 12px -2px rgba(219, 138, 82, 0.55);
   }
 
   /* Scroll-reveal — paired with the <Reveal> client component.
