@@ -3,6 +3,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ButtonLink } from "@/components/ui/button";
+import { GoldSeam } from "@/components/ui/gold-seam";
 import { methodSteps, METHOD_NAME } from "@/content/method";
 
 /**
@@ -30,7 +31,9 @@ export function MethodSteps({
             const Icon = step.icon;
             return (
               <Reveal key={step.key} delay={index * 60}>
-                <Card interactive className="h-full">
+                <Card interactive className="relative h-full overflow-hidden">
+                  {/* Chaque étape est une jointure d'or de la méthode. */}
+                  <GoldSeam className="absolute inset-x-0 top-0" />
                   <div className="flex items-center justify-between">
                     <span className="grid size-11 place-items-center rounded-xl bg-primary-50 text-primary-700">
                       <Icon className="size-5" aria-hidden="true" />

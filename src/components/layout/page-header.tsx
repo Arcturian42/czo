@@ -1,6 +1,7 @@
 import { Container } from "@/components/ui/section";
 import { Breadcrumbs, type Crumb } from "@/components/ui/breadcrumbs";
 import { CircuitMotif } from "@/components/marketing/circuit-motif";
+import { GoldSeam } from "@/components/ui/gold-seam";
 import { cn } from "@/lib/utils";
 
 /** En-tête de page secondaire : fil d'Ariane + sur-titre + H1 + intro. */
@@ -26,6 +27,7 @@ export function PageHeader({
         <h1 className="mt-3 max-w-3xl text-4xl font-semibold tracking-tight text-ink sm:text-5xl">
           {title}
         </h1>
+        <GoldSeam bold length="short" className="mt-5" />
         {intro ? (
           <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{intro}</p>
         ) : null}

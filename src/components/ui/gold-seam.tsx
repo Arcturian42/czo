@@ -12,21 +12,35 @@ import { cn } from "@/lib/utils";
 export function GoldSeam({
   className,
   glow = false,
-  width = "full",
+  bold = false,
+  orientation = "horizontal",
+  length = "full",
 }: {
   className?: string;
-  /** Halo cuivré léger — pour les fonds sombres. */
+  /** Halo cuivré léger. */
   glow?: boolean;
-  /** Largeur du filet : pleine ou courte (accent). */
-  width?: "full" | "short";
+  /** Filet plus marqué (2px) au lieu du cheveu (1px). */
+  bold?: boolean;
+  orientation?: "horizontal" | "vertical";
+  /** Longueur du filet : pleine ou courte (accent signature). */
+  length?: "full" | "short";
 }) {
+  const horizontal = orientation === "horizontal";
   return (
     <span
       aria-hidden="true"
       className={cn(
-        "gold-seam block",
+        "block",
+        horizontal ? "gold-seam" : "gold-seam-v",
         glow && "gold-seam-glow",
-        width === "short" ? "w-12" : "w-full",
+        horizontal
+          ? length === "short"
+            ? "w-14"
+            : "w-full"
+          : length === "short"
+            ? "h-14"
+            : "h-full",
+        bold && (horizontal ? "h-0.5" : "w-0.5"),
         className,
       )}
     />

@@ -71,7 +71,7 @@ export function Hero() {
           <div className="relative">
             {/* Cadre en métal satiné : l'appareil, rendu comme un substrat d'acier
                 brossé — le contrepoint froid qui fait ressortir la jointure cuivre. */}
-            <div className="rounded-[calc(1.5rem+2px)] bg-[image:var(--metal-satin)] p-0.5 shadow-elevated">
+            <div className="relative rounded-[calc(1.5rem+5px)] bg-[image:var(--metal-satin)] p-[5px] shadow-elevated">
               <Figure
                 src={siteConfig.media.hero}
                 alt="Smartphone ouvert et outils de précision sur un plan de travail d'atelier soigné (illustration)."
@@ -80,10 +80,17 @@ export function Hero() {
                 sizes="(min-width: 1024px) 42vw, 100vw"
                 className="border-transparent"
               />
+              {/* La jointure d'or : une fêlure cuivre kintsugi traversant l'appareil. */}
+              <GoldSeam
+                orientation="vertical"
+                bold
+                glow
+                className="absolute inset-y-8 left-10 h-auto"
+              />
             </div>
             {/* Carte signature : le « fil d'or » kintsugi coiffe l'accroche. */}
             <div className="absolute -bottom-5 -left-5 hidden max-w-[15rem] overflow-hidden rounded-2xl border border-line bg-paper shadow-card sm:block">
-              <GoldSeam />
+              <GoldSeam bold glow />
               <p className="p-4 text-sm font-medium text-ink">{siteConfig.tagline}</p>
             </div>
           </div>
