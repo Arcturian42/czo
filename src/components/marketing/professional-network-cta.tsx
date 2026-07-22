@@ -27,7 +27,7 @@ export function ProfessionalNetworkCTA() {
                 <span className="metal-text">réparateurs</span> plus transparents
               </h2>
               {/* Le fil d'or : la méthode commune qui relie chaque réparateur. */}
-              <GoldSeam glow width="short" className="mt-6" />
+              <GoldSeam glow bold length="short" className="mt-6" />
               <p className="mt-6 text-lg leading-relaxed text-white/70">
                 Nous préparons un réseau de professionnels formés et accompagnés
                 autour d'une méthode commune de diagnostic, de transparence et de

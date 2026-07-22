@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Reveal } from "./reveal";
+import { GoldSeam } from "./gold-seam";
 
 type ContainerProps = React.HTMLAttributes<HTMLDivElement> & {
   size?: "default" | "narrow" | "wide";
@@ -88,6 +89,13 @@ export function SectionHeader({
       >
         {title}
       </Heading>
+      {/* Signature « fil d'or » sous chaque titre de section. */}
+      <GoldSeam
+        bold
+        length="short"
+        glow={onDark}
+        className={cn("mt-5", align === "center" && "mx-auto")}
+      />
       {intro ? (
         <p
           className={cn(
