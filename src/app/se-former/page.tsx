@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/reveal";
 import { Card } from "@/components/ui/card";
 import { Figure } from "@/components/ui/figure";
 import { TrainingAudiencesSection } from "@/components/marketing/training-audiences-section";
-import { TrainingRequestForm } from "@/components/forms/training-request-form";
+import { TrainingFinder } from "@/components/training/training-finder";
 import { CourseJsonLd } from "@/components/seo/json-ld";
 import { CERTIFICATION_NOTE } from "@/content/trainings";
 
@@ -140,17 +140,17 @@ export default function SeFormerPage() {
         </Container>
       </Section>
 
-      {/* Demande d'information */}
+      {/* Trouvez votre parcours — orientation guidée + demande préremplie */}
       <Section surface="surface" id="demande">
         <Container size="narrow">
           <SectionHeader
             align="center"
-            eyebrow="Demande d'information"
-            title="Trouvons le bon parcours"
-            intro="Dites-nous d'où vous partez et ce que vous visez. Nous vous orientons."
+            eyebrow="Trouvez votre parcours"
+            title="Deux questions pour vous orienter"
+            intro="Dites-nous d'où vous partez et ce que vous visez : nous vous recommandons le parcours le plus adapté, puis préremplissons votre demande."
           />
-          <div className="mt-10 rounded-2xl border border-line bg-paper p-6 shadow-card md:p-8">
-            <TrainingRequestForm />
+          <div className="mt-10">
+            <TrainingFinder />
           </div>
         </Container>
       </Section>

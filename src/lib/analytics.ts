@@ -15,6 +15,7 @@ export type AnalyticsEvent =
   | "diagnostic_step"
   | "diagnostic_abandon"
   | "diagnostic_submit"
+  | "training_finder_complete"
   | "training_request_submit"
   | "professional_submit"
   | "phone_click"
