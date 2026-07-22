@@ -207,6 +207,24 @@ Cible **WCAG 2.2 AA** :
 - Aucune vidéo auto, aucun carrousel automatique, aucune dépendance lourde inutile.
 - Pour les vraies photos : utiliser `next/image` (WebP/AVIF, dimensions définies, lazy).
 
+## Visuels & images
+
+Le composant [`Figure`](./src/components/ui/figure.tsx) affiche une image via
+`next/image` (optimisation AVIF/WebP), avec **repli automatique** vers un
+placeholder élégant si la source est absente ou échoue au chargement — aucune
+image cassée n'apparaît jamais.
+
+Les visuels illustratifs sont centralisés dans `siteConfig.media`
+(hero, atelier, formation). ⚠️ Ce sont des images **illustratives** (aucune
+personne, aucune réparation réelle identifiable), hébergées temporairement sur
+un CDN externe.
+
+**Avant la mise en production :** remplacez-les par de vraies photographies de
+l'atelier, de préférence **auto-hébergées** dans `public/images/` (mettez alors
+à jour `siteConfig.media` avec les chemins locaux, ex. `/images/hero.webp`).
+Les emplacements « fondateur » et « études de cas » restent volontairement des
+placeholders : ne jamais y placer d'image générée présentée comme réelle.
+
 ## Tests & QA
 
 ```bash

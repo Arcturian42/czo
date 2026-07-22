@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section, Container, SectionHeader } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
+import { Figure } from "@/components/ui/figure";
 import { ServiceExplorer } from "@/components/services/service-explorer";
 import { PartsComparison } from "@/components/marketing/parts-comparison";
 import { ProcessTimeline } from "@/components/marketing/process-timeline";
@@ -72,6 +73,16 @@ export default function ReparerPage() {
             Les délais sont indicatifs et confirmés après diagnostic. Chaque appareil
             fait l'objet d'une étude de faisabilité.
           </p>
+
+          <Reveal className="mt-8">
+            <Figure
+              src={siteConfig.media.atelier}
+              alt="Gros plan macro d'une carte électronique et de points de microsoudure (illustration)."
+              ratio="aspect-[21/9]"
+              tone="ink"
+              sizes="(min-width: 1024px) 1024px, 100vw"
+            />
+          </Reveal>
         </Container>
       </Section>
 

@@ -50,6 +50,22 @@ export const siteConfig = {
     { days: "Dimanche", hours: "Fermé" },
   ],
 
+  // Visuels illustratifs.
+  //
+  // ⚠️ Ces images sont ILLUSTRATIVES (générées, sans personnes ni réparation
+  // réelle identifiable) et hébergées temporairement sur un CDN externe.
+  // À remplacer par de vraies photographies de l'atelier — de préférence
+  // auto-hébergées dans `public/images/` — avant la mise en production.
+  // Une valeur vide affiche automatiquement un placeholder élégant.
+  media: {
+    hero:
+      "https://d8j0ntlcm91z4.cloudfront.net/user_343BZXO1zjrbuWHAIdQY8a0DYVm/hf_20260722_131348_702907d1-94d8-49c2-9472-10968c86b2d3.png",
+    atelier:
+      "https://d8j0ntlcm91z4.cloudfront.net/user_343BZXO1zjrbuWHAIdQY8a0DYVm/hf_20260722_131403_7e08a837-cf76-42fc-bed4-29b6c05999e6.png",
+    training:
+      "https://d8j0ntlcm91z4.cloudfront.net/user_343BZXO1zjrbuWHAIdQY8a0DYVm/hf_20260722_131406_78c50141-3096-46d3-a1ee-a7b7375ffa62.png",
+  } as Record<string, string>,
+
   // URL canonique du site en production.
   url: "https://www.example.com",
 } as const;

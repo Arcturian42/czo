@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import { Check, Wrench, Target, Layers, Users2 } from "lucide-react";
 import { buildMetadata } from "@/lib/seo";
+import { siteConfig } from "@/config/site";
 import { PageHeader } from "@/components/layout/page-header";
 import { Section, Container, SectionHeader } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { Card } from "@/components/ui/card";
+import { Figure } from "@/components/ui/figure";
 import { TrainingAudiencesSection } from "@/components/marketing/training-audiences-section";
 import { TrainingRequestForm } from "@/components/forms/training-request-form";
 import { CourseJsonLd } from "@/components/seo/json-ld";
@@ -46,6 +48,18 @@ export default function SeFormerPage() {
         intro="Une même méthode, adaptée à votre point de départ : diagnostic, choix des pièces, gestes techniques, contrôle qualité et relation client."
         breadcrumbs={[{ label: "Se former", href: "/se-former" }]}
       />
+
+      <Container className="mt-10 md:mt-14">
+        <Reveal>
+          <Figure
+            src={siteConfig.media.training}
+            alt="Établi de formation à la réparation : outils de précision et appareils ouverts, prêts pour la pratique (illustration)."
+            ratio="aspect-[16/7]"
+            sizes="(min-width: 1024px) 1024px, 100vw"
+            className="shadow-card"
+          />
+        </Reveal>
+      </Container>
 
       {/* Ce que vous apprenez */}
       <Section>

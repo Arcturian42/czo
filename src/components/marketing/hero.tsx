@@ -3,7 +3,7 @@ import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/section";
 import { Reveal } from "@/components/ui/reveal";
 import { ButtonLink } from "@/components/ui/button";
-import { ImagePlaceholder } from "@/components/ui/image-placeholder";
+import { Figure } from "@/components/ui/figure";
 import { CircuitMotif } from "./circuit-motif";
 
 const reassurance = [
@@ -68,9 +68,12 @@ export function Hero() {
 
         <Reveal delay={140} className="relative">
           <div className="relative">
-            <ImagePlaceholder
+            <Figure
+              src={siteConfig.media.hero}
+              alt="Smartphone ouvert et outils de précision sur un plan de travail d'atelier soigné (illustration)."
               ratio="aspect-[4/5]"
-              label="Photographie à intégrer : technicien, appareil ouvert, atelier propre, geste précis, composants visibles."
+              priority
+              sizes="(min-width: 1024px) 42vw, 100vw"
               className="shadow-elevated"
             />
             <div className="absolute -bottom-5 -left-5 hidden max-w-[15rem] rounded-2xl border border-line bg-paper p-4 shadow-card sm:block">
