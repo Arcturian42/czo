@@ -34,10 +34,10 @@ export function TwoPaths() {
             return (
               <Reveal key={path.title} delay={index * 80}>
                 <article
-                  className={`group relative flex h-full flex-col overflow-hidden rounded-3xl p-8 md:p-10 ${
+                  className={`group relative flex h-full flex-col overflow-hidden rounded-3xl p-8 transition duration-300 ease-out hover:-translate-y-1 motion-reduce:transform-none md:p-10 ${
                     onDark
-                      ? "bg-ink text-white"
-                      : "border border-primary-100 bg-primary-50/50 text-ink"
+                      ? "bg-ink text-white hover:shadow-elevated"
+                      : "border border-primary-100 bg-primary-50/50 text-ink hover:border-primary-200 hover:shadow-card"
                   }`}
                 >
                   <span
@@ -63,13 +63,12 @@ export function TwoPaths() {
                     {path.text}
                   </p>
                   <div className="mt-8 pt-2">
-                    <ButtonLink
-                      href={path.cta.href}
-                      variant={onDark ? "primary" : "primary"}
-                      size="md"
-                    >
+                    <ButtonLink href={path.cta.href} variant="primary" size="md">
                       {path.cta.label}
-                      <ArrowRight className="size-4" aria-hidden="true" />
+                      <ArrowRight
+                        className="size-4 transition-transform duration-300 ease-out group-hover:translate-x-0.5 motion-reduce:transform-none"
+                        aria-hidden="true"
+                      />
                     </ButtonLink>
                   </div>
                 </article>

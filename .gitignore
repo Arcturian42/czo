@@ -43,6 +43,11 @@ yarn-error.log*
 # vercel
 .vercel
 
+# third-party agent skills (local tooling, not part of the site)
+/.agents/
+/.claude/
+/skills-lock.json
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

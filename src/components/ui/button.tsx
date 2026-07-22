@@ -5,10 +5,11 @@ export type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 export type ButtonSize = "sm" | "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:cursor-not-allowed disabled:opacity-55";
+  "inline-flex items-center justify-center gap-2 rounded-full font-medium leading-none transition duration-200 ease-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-600 focus-visible:ring-offset-2 focus-visible:ring-offset-paper disabled:cursor-not-allowed disabled:opacity-55 active:translate-y-px motion-reduce:transition-none motion-reduce:active:translate-y-0";
 
 const variants: Record<ButtonVariant, string> = {
-  primary: "bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800",
+  primary:
+    "bg-primary-600 text-white hover:bg-primary-700 hover:shadow-[0_10px_24px_-10px_rgba(42,73,212,0.55)] active:bg-primary-800",
   secondary: "bg-ink text-white hover:bg-primary-950 active:bg-black",
   outline:
     "border border-line-strong bg-paper text-ink hover:border-primary-300 hover:bg-primary-50 hover:text-primary-800",

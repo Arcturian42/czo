@@ -21,6 +21,9 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // Utilitaire local de captures d'écran (hors périmètre applicatif).
     "pw-shot.mjs",
+    // Skills d'agents tiers installés localement (hors périmètre applicatif).
+    ".agents/**",
+    ".claude/**",
   ]),
 ]);
 
