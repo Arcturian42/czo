@@ -127,7 +127,7 @@ export default function MethodePage() {
       {/* Enseignée & futur réseau */}
       <Section surface="ink">
         <Container size="narrow" className="text-center">
-          <p className="eyebrow text-primary-300">Aujourd'hui, demain</p>
+          <p className="eyebrow text-accent-300">Aujourd'hui, demain</p>
           <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold text-white sm:text-4xl">
             Appliquée. Enseignée. Bientôt partagée.
           </h2>

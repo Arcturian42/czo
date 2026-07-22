@@ -16,50 +16,59 @@ export default function OpengraphImage() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          background: "#0f1626",
+          background: "#17151b",
+          backgroundImage:
+            "radial-gradient(1000px 500px at 78% -8%, rgba(219,138,82,0.16), transparent 60%)",
           padding: "72px",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
           <div
             style={{
-              width: 64,
-              height: 64,
-              borderRadius: 16,
-              background: "#2a49d4",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              color: "#f5f2ec",
+              fontSize: 38,
+              fontWeight: 600,
+              letterSpacing: 1,
             }}
           >
-            <div
-              style={{
-                width: 22,
-                height: 22,
-                borderRadius: 999,
-                border: "6px solid #fff",
-              }}
-            />
-          </div>
-          <div style={{ color: "#93b4ff", fontSize: 26, letterSpacing: 2 }}>
             {siteConfig.brandName}
           </div>
+          {/* Le losange d'or — la jointure kintsugi. */}
+          <div
+            style={{
+              width: 16,
+              height: 16,
+              transform: "rotate(45deg)",
+              borderRadius: 3,
+              background: "linear-gradient(135deg, #db8a52, #f2ba8b, #c26a34)",
+            }}
+          />
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
+          {/* Le fil d'or, au-dessus de l'accroche. */}
           <div
             style={{
-              color: "#fff",
+              width: 120,
+              height: 3,
+              marginBottom: 30,
+              borderRadius: 999,
+              background: "linear-gradient(90deg, #c26a34, #f2ba8b, #c26a34)",
+            }}
+          />
+          <div
+            style={{
+              color: "#f8f6f1",
               fontSize: 62,
               fontWeight: 700,
-              lineHeight: 1.1,
-              maxWidth: 900,
+              lineHeight: 1.08,
+              maxWidth: 940,
             }}
           >
             Réparer. Transmettre. Élever les standards.
           </div>
-          <div style={{ color: "#aeb8c7", fontSize: 30, marginTop: 28 }}>
+          <div style={{ color: "#b6ad9f", fontSize: 30, marginTop: 28 }}>
             {siteConfig.tagline}
           </div>
         </div>
@@ -70,9 +79,9 @@ export default function OpengraphImage() {
               <div
                 key={chip}
                 style={{
-                  color: "#dbe6ff",
+                  color: "#e7ddd0",
                   fontSize: 22,
-                  border: "1px solid rgba(255,255,255,0.18)",
+                  border: "1px solid rgba(219,138,82,0.32)",
                   borderRadius: 999,
                   padding: "10px 22px",
                 }}
