@@ -11,7 +11,7 @@
  */
 
 export const siteConfig = {
-  brandName: "[NOM DE MARQUE]",
+  brandName: "Kinto",
   legalName: "[RAISON SOCIALE]",
   tagline: "Le bon diagnostic. La bonne pièce. La bonne décision.",
   shortPitch:
